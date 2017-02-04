@@ -107,10 +107,10 @@ console.log(food); // Reference Error
 
 <sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
-## Arrow Functions
+## Funciones Flecha (Arrow Functions)
 
-Often times we have nested functions in which we would like to preserve the
-context of `this` from its lexical scope. An example is shown below:
+Muchas veces tenemos funciones anidadas en las que deseamos preservar 
+el contexto de `this` de su visibilidad lexica. Un ejemplo de ello debajo:
 
 ```javascript
 function Person(name) {
@@ -119,13 +119,14 @@ function Person(name) {
 
 Person.prototype.prefixName = function (arr) {
     return arr.map(function (character) {
-        return this.name + character; // Cannot read property 'name' of undefined
+        return this.name + character; // Cannot read property 'name' of undefined - no se puede leer la propiedad 'name' de undefined
     });
 };
 ```
 
-One common solution to this problem is to store the context of `this` using
-a variable:
+
+Una solucion muy comun para este problema es el de guardar el contexto de `this` usando
+una variable;
 
 ```javascript
 function Person(name) {
@@ -133,14 +134,14 @@ function Person(name) {
 }
 
 Person.prototype.prefixName = function (arr) {
-    var that = this; // Store the context of this
+    var that = this; // Guarda el contexto de `this` en `that`
     return arr.map(function (character) {
         return that.name + character;
     });
 };
 ```
 
-We can also pass in the proper context of `this`:
+Tambien podemos pasar el contexto de `this` como parametro:
 
 ```javascript
 function Person(name) {
@@ -150,11 +151,11 @@ function Person(name) {
 Person.prototype.prefixName = function (arr) {
     return arr.map(function (character) {
         return this.name + character;
-    }, this);
+    }, this); // Se envia `this` como parametro de la funcion
 };
 ```
 
-As well as bind the context:
+Tambien se puede enlazar el contexto usando la metodo `bind`:
 
 ```javascript
 function Person(name) {
@@ -164,12 +165,11 @@ function Person(name) {
 Person.prototype.prefixName = function (arr) {
     return arr.map(function (character) {
         return this.name + character;
-    }.bind(this));
+    }.bind(this)); // Enlaze del contexto
 };
 ```
-
-Using **Arrow Functions**, the lexical value of `this` isn't shadowed and we
-can re-write the above as shown:
+Usando **Funciones Flecha** (Arrow Functions),  el valor lexico de `this` no se 
+ensombra (shadowed) y podemos reescribir lo mostrado arriba de la siguiente manera:
 
 ```javascript
 function Person(name) {
@@ -181,23 +181,22 @@ Person.prototype.prefixName = function (arr) {
 };
 ```
 
-> **Best Practice**: Use **Arrow Functions** whenever you need to preserve the
-lexical value of `this`.
+> **Buena Practica**: Usar **Funciones Flecha** siempre que queramos preservar el 
+valor de `this`.
 
-Arrow Functions are also more concise when used in function expressions which
-simply return a value:
+Las Funciones Flecha son tambien mas concisas las expresiones de funciones que retornan un unico valor;
 
 ```javascript
-var squares = arr.map(function (x) { return x * x }); // Function Expression
+var squares = arr.map(function (x) { return x * x }); // Expresion de funcion
 ```
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
-const squares = arr.map(x => x * x); // Arrow Function for terser implementation
+const squares = arr.map(x => x * x); // Abreviacion de la expresion por medio de funciones flecha
 ```
 
-> **Best Practice**: Use **Arrow Functions** in place of function expressions
-when possible.
+> **Buena Practica**: Usar **Funciones Flecha** en lugar de expresiones de funciones siempre y
+cuando sea posible.
 
 <sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
