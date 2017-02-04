@@ -3,7 +3,7 @@
 Apuntes de repaso para ES2015 [ES6], trucos mejores practivas y codigos de
 ejemplo para tu trabajo diario. Se aceptan aportes.
 
-## Table of Contents
+## Tabla de contentido
 
 - [var, let o const](#var-versus-let--const)
 - [Reemplazar IIFEs (Expresiones funcionales invocadas de manera automatica) por bloques](#replacing-iifes-with-blocks)
@@ -23,11 +23,11 @@ ejemplo para tu trabajo diario. Se aceptan aportes.
 
 ## var versus let / const
 
-> Besides `var`, we now have access to two new identifiers for storing values
-—`let` and `const`. Unlike `var`, `let` and `const` statements are not hoisted
-to the top of their enclosing scope.
+> Ademas de `var`, ahora tenemos accesso a dos nuevos operadores para guardar valores
+—`let` y `const`. a diferencia de `var`, `let` y `const` no son hacen (hoisting), esto significa que 
+no se adieren al principio del contexto de visibilidad.
 
-An example of using `var`:
+Un ejemplo del uso de `var`:
 
 ```javascript
 var snack = 'Meow Mix';
@@ -43,7 +43,7 @@ function getFood(food) {
 getFood(false); // undefined
 ```
 
-However, observe what happens when we replace `var` using `let`:
+Encambio, mira lo que sucede cuande se reemplaze `var` por `let`:
 
 ```javascript
 let snack = 'Meow Mix';
@@ -59,24 +59,23 @@ function getFood(food) {
 getFood(false); // 'Meow Mix'
 ```
 
-This change in behavior highlights that we need to be careful when refactoring
-legacy code which uses `var`. Blindly replacing instances of `var` with `let`
-may lead to unexpected behavior.
+Este cambio en el comportamiento resalta que debemos ser cuidadosos cuando se 
+reescribe (refactoring) codigo antiguo que usa `var`. Reemplazar ciegamente las instancias
+de `var` por `let` puede conllevar a comportamientos inesperados.
 
-> **Note**: `let` and `const` are block scoped. Therefore, referencing
-block-scoped identifiers before they are defined will produce
-a `ReferenceError`.
+> **Note**: `let` y `const` tienen visibilidad de bloque "block-scoped" . Por tanto, hacer referencia a 
+declaraciones que tienen visibilidad de bloque producira un error de tipo `ReferenceError`.
 
 ```javascript
-console.log(x); // ReferenceError: x is not defined
+console.log(x); // ReferenceError: x is not defined (x no se encuentra definido)
 
 let x = 'hi';
 ```
 
-> **Best Practice**: Leave `var` declarations inside of legacy code to denote
-that it needs to be carefully refactored. When working on a new codebase, use
-`let` for variables that will change their value over time, and `const` for
-variables which cannot be reassigned.
+> **Note**: Dejar declaraciones de variables usando `var` en codigo antiguo denota, 
+que debe ser reescrito cuidadosamente. Cuando se trabaja en un nuevo codigo, usa `let`
+para variables que cambian de valor a medida que pasa el tiempo, y `const` para variables que
+no van ser reasignadas.
 
 <sup>[(back to table of contents)](#table-of-contents)</sup>
 
@@ -104,7 +103,7 @@ Using ES6 Blocks:
 console.log(food); // Reference Error
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Arrow Functions
 
