@@ -77,13 +77,15 @@ que debe ser reescrito cuidadosamente. Cuando se trabaja en un nuevo codigo, usa
 para variables que cambian de valor a medida que pasa el tiempo, y `const` para variables que
 no van ser reasignadas.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
-## Replacing IIFEs with Blocks
+## Reemplazar IIFEs (Expresiones funcionales invocadas de manera automatica) por bloques
 
-> A common use of **Immediately Invoked Function Expressions** is to enclose
-values within its scope. In ES6, we now have the ability to create block-based
-scopes and therefore are not limited purely to function-based scope.
+
+> Un uso comun de **Expresiones funcionales invocadas de manera automatica** es el de encapsular
+valores dentro del espacio de visibilidad. En ES6, podemos crear visibilidad basada en bloques
+(block-based scopes) y por ello ahora no nos vemos limitados unicamente a visiblidad 
+basada en funciones.
 
 ```javascript
 (function () {
@@ -93,7 +95,7 @@ scopes and therefore are not limited purely to function-based scope.
 console.log(food); // Reference Error
 ```
 
-Using ES6 Blocks:
+Usando bloques en ES6
 
 ```javascript
 {
@@ -197,7 +199,7 @@ const squares = arr.map(x => x * x); // Arrow Function for terser implementation
 > **Best Practice**: Use **Arrow Functions** in place of function expressions
 when possible.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Strings
 
@@ -312,7 +314,7 @@ let today = new Date();
 let text = `The time and date is ${today.toLocaleString()}`;
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Destructuring
 
@@ -352,7 +354,7 @@ console.log(occupation); // 'jedi'
 console.log(father); // 'anakin'
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Modules
 
@@ -513,7 +515,7 @@ Therefore, changing the binding of a variable in one module will affect the
 value within the exported module. Avoid changing the public interface of these
 exported values.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Parameters
 
@@ -621,7 +623,7 @@ let cities = ['San Francisco', 'Los Angeles'];
 let places = ['Miami', ...cities, 'Chicago']; // ['Miami', 'San Francisco', 'Los Angeles', 'Chicago']
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Classes
 
@@ -697,7 +699,7 @@ class Personal extends Person {
 implementation and prototypes work under the hood, it is a good feature for
 beginners and allows us to write cleaner code.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Symbols
 
@@ -766,7 +768,7 @@ class SomeReadableType {
 types in ES6: Arrays, strings, generators, etc. When called as a method it returns an object with an Iterator
 interface.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Maps
 
@@ -827,7 +829,7 @@ for (let [key, value] of map.entries()) {
 }
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## WeakMaps
 
@@ -907,7 +909,7 @@ was associated with a particular DOM element once it has been removed from the
 document. In general, WeakMaps are very useful for any library that wraps DOM
 elements.
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Promises
 
@@ -1000,7 +1002,7 @@ Promise.all(promises)
  });
 ```
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Generators
 
@@ -1098,7 +1100,7 @@ and Promises allow us to write asynchronous code in a synchronous manner while r
 errors in a nice way, we can actually begin to utilize a simpler construction that provides the same benefits:
 [async-await](https://github.com/DrkSephy/es6-cheatsheet#async-await).
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
 ## Async Await
 
@@ -1127,7 +1129,7 @@ main();
 Under the hood, it performs similarly to Generators. I highly recommend using them over Generators + Promises. A great resource
 for getting up and running with ES7 and Babel can be found [here](http://masnun.com/2015/11/11/using-es7-asyncawait-today-with-babel.html).
 
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 ## Getter and setter functions
 
 ES6 has started supporting getter and setter functions. Using the following example:
@@ -1192,4 +1194,4 @@ person.fullName; // James Bond
 person.fullName = 'Bond 007';
 person.fullName; // Bond 007
 ```
-<sup>[(back to table of contents)](#table-of-contents)</sup>
+<sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
