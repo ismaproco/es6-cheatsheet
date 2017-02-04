@@ -200,11 +200,10 @@ cuando sea posible.
 
 <sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
 
-## Strings
+## Cadenas de texto
 
-With ES6, the standard library has grown immensely. Along with these changes
-are new methods which can be used on strings, such as `.includes()` and
-`.repeat()`.
+Con ES6, la libreria standard ha crecido de manera considerable. Dentro de las adiciones
+se encuentran nuevos metodos para el manejo de strings, como `.includes()` y `.repeat()`.
 
 ### .includes( )
 
@@ -215,14 +214,14 @@ var substring = 'foo';
 console.log(string.indexOf(substring) > -1);
 ```
 
-Instead of checking for a return value `> -1` to denote string containment,
-we can simply use `.includes()` which will return a boolean:
+En vez de validar el contendio de un string usando el valor retornado con `> -1`,
+podemos sencillament usar `.includes()` el cual retornara un boleano.
 
 ```javascript
 const string = 'food';
 const substring = 'foo';
 
-console.log(string.includes(substring)); // true
+console.log(string.includes(substring)); // verdadero
 ```
 
 ### .repeat( )
@@ -237,80 +236,80 @@ function repeat(string, count) {
 }
 ```
 
-In ES6, we now have access to a terser implementation:
+En ES6, ahora tenemos acceso a una implementacion reducida:
 
 ```javascript
-// String.repeat(numberOfRepetitions)
+// String.repeat(numeroDeRepeticiones)
 'meow'.repeat(3); // 'meowmeowmeow'
 ```
 
-### Template Literals
+### Literales de Plantillas
 
-Using **Template Literals**, we can now construct strings that have special
-characters in them without needing to escape them explicitly.
+Usando **Literales de Plantillas**, ahora podemos construir strings que tienen
+caracteres especiales dentro de ellos sin necesidad de usar el caracter de 
+escape ** \ **. 
 
 ```javascript
-var text = "This string contains \"double quotes\" which are escaped.";
+var text = "Esta cadena contiene \"comillas dobles\" usando el caracter de escape.";
 ```
 
 ```javascript
-let text = `This string contains "double quotes" which don't need to be escaped anymore.`;
+let text = `Esta cadena contiene "comillas dobles" sin necesidad de usar el caracter de escape`;
 ```
 
-**Template Literals** also support interpolation, which makes the task of
-concatenating strings and values:
+Los **Literales de Plantillas** tambien soportan interpolacion, que se encarga de
+concatenar cadenas de texto (strings) y valores:
 
 ```javascript
-var name = 'Tiger';
-var age = 13;
+var nombre = 'Tigre';
+var edad = 13;
 
-console.log('My cat is named ' + name + ' and is ' + age + ' years old.');
+console.log('Mi gato se llama ' + nombre + ' y tiene ' + edad + ' años.');
 ```
 
-Much simpler:
+Mucho mas simple:
 
 ```javascript
-const name = 'Tiger';
-const age = 13;
+var nombre = 'Tigre';
+var edad = 13;
 
-console.log(`My cat is named ${name} and is ${age} years old.`);
+console.log(`Mi gato se llama ${nombre} y tiene ${edad} años.`);
 ```
-
-In ES5, we handled new lines as follows:
+En ES5, manejabamos nuevas lineas de texto de la siguiente manera:
 
 ```javascript
-var text = (
-    'cat\n' +
-    'dog\n' +
+var texto = (
+    'gato\n' +
+    'perro\n' +
     'nickelodeon'
 );
 ```
 
-Or:
+O:
 
 ```javascript
-var text = [
-    'cat',
-    'dog',
+var texto = [
+    'gato',
+    'perro',
     'nickelodeon'
 ].join('\n');
 ```
 
-**Template Literals** will preserve new lines for us without having to
-explicitly place them in:
+Los **Literales de Plantillas** preservan los saltos de lineas
+sin que tengamos que colocarlos explicitamente en la cadena de texto:
 
 ```javascript
-let text = ( `cat
-dog
+let texto = ( `gato
+perro
 nickelodeon`
 );
 ```
 
-**Template Literals** can accept expressions, as well:
+Los **Literales de Plantillas** tambien aceptan aceptan expresiones:
 
 ```javascript
-let today = new Date();
-let text = `The time and date is ${today.toLocaleString()}`;
+let hoy = new Date();
+let texto = `El dia y la hora son: ${hoy.toLocaleString()}`;
 ```
 
 <sup>[(Volver a la tabla de contenidos)](#tabla-de-contenidos)</sup>
